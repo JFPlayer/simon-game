@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    animation: 8s ease  infinite bgAnimation;
+    background-color: #368EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.base{
+    height: 65vh;
+    width: 65vh;
+    background-color: rgb(34, 34, 34);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.table{
+    height: 90%;
+    width: 90%;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.color{
+    width: 50%;
+    height: 50%;
+}
+.center{
+    width: 25vh;
+    height: 25vh;
+    border-radius: 50%;
+    background-color: rgb(34, 34, 34);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.start{
+    width:80%;
+    height:80%;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+.start span{
+    font-size: 4rem;
+    color: rgb(34, 34, 34);
+    user-select: none;
+}
+.green{
+    background: #27E51D;
+}
+.red{
+    background: #FF0C06;
+}
+.yellow{
+    background: #FFF708;
+}
+.blue{
+    background: #368EFF;
+}
+.column{
+    background: rgb(34, 34, 34);
+    position: absolute;
+}
+.v{
+    height: 60vh;
+    width: 20px;
+}
+.h{
+    height: 20px;
+    width: 60vh;
+}
+.light{
+    background: white;
+}
+.win, .lose{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.win,.lose :first-child{
+    font-size: 9rem;
+}
+.win,.lose span{
+    font-size: 6rem;
+    line-height: 90%;
+    color: white;
+    -webkit-text-stroke: 4px black ;
+}
+.hide {
+    display: none;
+}
+@keyframes bgLose{
+    0%, 60%, 100%{
+        background: black;
+    }
+    40%{
+        background: red;
+    }
+}
+@keyframes bgAnimation{
+    25% {
+        background: #27E51D;
+    }
+    50% {
+        background: #FF0C06;
+    }
+    75% {
+        background: #FFF708;
+    }
+    100%{
+        background: #368EFF;
+    }
+}
+@media (max-width: 500px){
+    .base{
+        height: 90vw;
+        width: 90vw;
+    }
+    .v{
+        height: 90vw;
+    }
+    .h{
+        width: 90vw;
+    }
+    .win,.lose span{
+        font-size: 5rem;
+        line-height: 90%;
+        color: white;
+        -webkit-text-stroke: 3px black ;
+    }
+    .win,.lose :first-child{
+        font-size: 7rem;
+    }
+}

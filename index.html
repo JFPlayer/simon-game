@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>|
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Game</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg" href="./images/simon-icon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="game" id="bg">
+        <div class="base">
+            <div class="table">
+                <div id="green" class="color green" data-color="green"></div>
+                <div id="red" class="color red" data-color="red"></div>
+                <div id="yellow" class="color yellow" data-color="yellow"></div>
+                <div id="blue" class="color blue" data-color="blue"></div>
+            </div>
+            <div class="column v"></div>
+            <div class="column h"></div>
+            <div class="center">
+                <div id="btn-start" class="start" onclick="startGame()"><span>Start!</span></div>
+            </div>
+        </div>
+        <div id="win" class="win hide">
+            <span>Perfect</span>
+            <span>You win!</span>
+        </div>
+        <div id="lose" class="lose hide">
+            <span>You lose</span>
+            <span>Try again</span>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
