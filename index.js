@@ -67,7 +67,7 @@ class Game{
     }
     lightSequence(){
         for(let i = 0; i < this.currentLevel; i++){
-            setTimeout(() => this.turnOnColor(this.sequence[i]),500*i)
+            setTimeout(() => this.turnOnColor(this.sequence[i]),700*i)
         }
     }
     turnOnColor(color){
