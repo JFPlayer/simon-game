@@ -2,11 +2,13 @@ const green = document.getElementById('green');
 const red = document.getElementById('red');
 const yellow = document.getElementById('yellow');
 const blue = document.getElementById('blue');
-this.colors = [green, red, yellow, blue];
+const colors = [green, red, yellow, blue];
 const btnStart = document.getElementById('btn-start');
 const bg = document.getElementById('bg');
 const win = document.getElementById('win');
 const lose = document.getElementById('lose');
+const count = document.getElementById('countDown');
+
 
 const FINAL_LEVEL = 10;
 const sound = {
@@ -18,7 +20,6 @@ const sound = {
 
 class Game{
     constructor(){
-        this.initialize = this.initialize.bind(this);
         this.initialize();
         this.color = {
             green,
@@ -27,7 +28,7 @@ class Game{
             blue
         }
         this.generateSequence();
-        setTimeout(this.nextLevel,500);
+        this.countDownSequence(3);
     }
     initialize(){
         this.nextLevel = this.nextLevel.bind(this)
@@ -44,6 +45,20 @@ class Game{
     }
     generateSequence(){
         this.sequence = new Array(FINAL_LEVEL).fill(0).map(n => Math.floor(Math.random()*4))
+    }
+    countDownSequence(i){
+        count.classList.remove('hide')
+        count.style.animation = `bigToSmall 1s ${i+1} ease-in forwards`;
+        count.innerHTML = i--;
+        const countUpdate = setInterval(() => {
+            if (i === 0){
+                count.innerHTML = 'Go!';
+                clearInterval(countUpdate);
+                setTimeout(this.nextLevel,1250);
+            }else{
+                count.innerHTML = i--;
+            }
+        },1000)
     }
     nextLevel(){
         this.subLevel = 0;
@@ -123,5 +138,5 @@ class Game{
 }
 
 function startGame(){
-    window.game = new Game()
+    const game = new Game()
 }

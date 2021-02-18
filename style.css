@@ -112,10 +112,24 @@ body{
     font-size: 6rem;
     line-height: 90%;
     color: white;
-    -webkit-text-stroke: 4px black ;
+    -webkit-text-stroke: 4px rgb(34, 34, 34) ;
 }
 .hide {
     display: none;
+}
+.countDown{
+    user-select: none;
+    color: white;
+    -webkit-text-stroke: 10px rgb(34, 34, 34) ;
+    position: absolute;
+    font-size: 25rem;
+}
+@keyframes bigToSmall{
+    to{
+        font-size: 0rem;
+        -webkit-text-stroke: 3px rgb(34, 34, 34) ;
+        color: transparent;
+    }
 }
 @keyframes bgLose{
     0%, 60%, 100%{
@@ -154,7 +168,7 @@ body{
         font-size: 5rem;
         line-height: 90%;
         color: white;
-        -webkit-text-stroke: 3px black ;
+        -webkit-text-stroke: 3px rgb(34, 34, 34) ;
     }
     .win,.lose :first-child{
         font-size: 7rem;
